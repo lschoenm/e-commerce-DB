@@ -8,7 +8,7 @@ services:
       - path: .env
     # Do not mount in .../postgresql/data/ -> error
     volumes:
-      - ./db-data/:/var/lib/postgresql
+      - pgdata:/var/lib/postgresql
       - ./sql/:/sql/
       - ./data-raw/:/data-raw/
 
