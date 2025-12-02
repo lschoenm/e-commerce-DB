@@ -37,7 +37,7 @@ ecommerce-postgres-project/
 
 ## Starting the DB via Docker
 
-Using the definition in `docker-compose.yaml`, I can start up a PostgreSQL container. I made sure to also mount the directory `sql/` containing my SQL schema and for loading the data, and the directory `data-raw/` containing the input CSV files. 
+Using the definition in `docker-compose.yaml`, I can start up a PostgreSQL container. I made sure to also mount the directory `sql/` containing my SQL schema and for loading the data, and the directory `data-raw/` containing the input CSV files.  The database directory is in a named directory, which means that it will not persist between shutdowns. To have it stored locally, we would have to mount it like the other directories. 
 
 To make starting, setup, and logging into the DB easier, I made a small helper script `init-db.sh`. 
 
