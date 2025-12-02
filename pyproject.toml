@@ -1,0 +1,17 @@
+[project]
+name = "e-commerce-db"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "polars>=1.35.2",
+    "psycopg2-binary>=2.9.11",
+    "python-dotenv>=1.2.1",
+    "sqlalchemy>=2.0.44",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.1.0",
+]
