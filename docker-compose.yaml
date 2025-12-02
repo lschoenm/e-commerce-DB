@@ -6,8 +6,11 @@ services:
       - 5432:5432
     env_file: 
       - path: .env
+    # Do not mount in .../postgresql/data/ -> error
     volumes:
-      - ./db-data/:/var/lib/postgresql/data/
+      - ./db-data/:/var/lib/postgresql
+      - ./sql/:/sql/
+      - ./data-raw/:/data-raw/
 
 volumes:
   pgdata:
