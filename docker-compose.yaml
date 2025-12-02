@@ -1,0 +1,13 @@
+services:
+  database:
+    image: "postgres:latest"
+    container_name: "olist-postgres"
+    ports:
+      - 5432:5432
+    env_file: 
+      - path: .env
+    volumes:
+      - ./db-data/:/var/lib/postgresql/data/
+
+volumes:
+  pgdata:
