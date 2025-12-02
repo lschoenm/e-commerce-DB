@@ -1,3 +1,6 @@
+data-raw/
+db-data/
+
 # Python-generated files
 __pycache__/
 *.py[oc]
