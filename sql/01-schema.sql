@@ -1,9 +1,9 @@
 CREATE SCHEMA IF NOT EXISTS olist;
 
 CREATE TABLE olist.orders (
-    order_id TEXT PRIMARY KEY,
-    customer_id TEXT,
-    order_status TEXT,
+    order_id CHAR(42) PRIMARY KEY,
+    customer_id CHAR(42),
+    order_status VARCHAR,
     order_purchase_timestamp TIMESTAMP,
     order_approved_at TIMESTAMP,
     order_delivered_carrier_date TIMESTAMP,
@@ -12,10 +12,10 @@ CREATE TABLE olist.orders (
 );
 
 CREATE TABLE olist.order_items (
-    order_id TEXT,
+    order_id CHAR(42),
     order_item_id INTEGER,
-    product_id TEXT,
-    seller_id TEXT,
+    product_id CHAR(42),
+    seller_id CHAR(42),
     shipping_limit_date TIMESTAMP,
     price NUMERIC,
     freight_value NUMERIC,
