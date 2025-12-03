@@ -22,4 +22,7 @@ docker exec -i olist-postgres psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /sql
 echo "Loading raw data..."
 docker exec -i olist-postgres psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /sql/02-load-data.sql
 
+echo "Loading views..."
+docker exec -i olist-postgres psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f /sql/03-views.sql
+
 echo "Database initialization complete."
