@@ -8,3 +8,13 @@ SELECT
     o.customer_id
 FROM olist.order_items oi
 JOIN olist.orders o USING (order_id);
+
+-- 2. Monthly revenue view
+CREATE VIEW olist.monthly_revenue AS
+SELECT
+    DATE_TRUNC('month', order_purchase_timestamp) AS datetime_month,
+    SUM(price + freight_value) AS total_revenue
+FROM olist.order_items_expanded
+WHERE order_status IN ('delivered', 'shipped')
+GROUP BY datetime_month
+ORDER BY datetime_month;
